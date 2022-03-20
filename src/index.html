@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html style="height: 400px; width: 500px">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resize Test</title>
+  </head>
+  <body>
+    <div id="content" style="height: 100vh"></div>
+  </body>
+  <script>
+    const createNotification = (size, border, i) => `<div
+      style="position: absolute; background-color: #ff0000; height: ${size}px; width: ${size}px; bottom: ${
+      (i - 1) * (size + border) + border
+    }px; right: ${border}px">
+      Notification
+    </div>`
+    document.getElementById('content').innerHTML = `
+    ${createNotification(100, 5, 1)}
+    ${createNotification(100, 5, 2)}
+    ${createNotification(100, 5, 3)}
+    ${createNotification(100, 5, 4)}
+    `
+  </script>
+</html>
